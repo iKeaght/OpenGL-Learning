@@ -86,10 +86,13 @@ int main() {
 	glDeleteShader(fragmentShader);
 
 
-	float vertices[9] = {
-		-0.5f, -0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		 0.0f,  0.5f, 0.0f,
+	float vertices[18] = {
+		-0.75f, -0.5f, 0.0f,
+		 0.25f, -0.5f, 0.0f,
+		-0.25f,  0.5f, 0.0f,
+		-0.25f, -0.5f, 0.0f,	
+		 0.75f, -0.5f, 0.0f,
+		 0.25f, 0.5f, 0.0f,
 	};
 	unsigned int VBO;
 	glGenBuffers(1, &VBO);
@@ -111,7 +114,7 @@ int main() {
 
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawArrays(GL_TRIANGLES, 0, 6);
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
